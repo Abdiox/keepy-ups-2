@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+#screen {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+#game {
+  grid-area: 1 / 1;
+  background-color: red;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 10% / 10%;
+  grid-template-rows: 100%;
+}
+
+#game_background {
+  grid-area: 1 / 1;
+  background-image: url(carlitos-Cartoon-Landscape.svg);
+  background-size: cover;
+}
+
+#start {
+  overflow: hidden;
+}
+#gameover {
+  overflow: hidden;
+}
+
+#level_complete {
+  overflow: hidden;
+}
