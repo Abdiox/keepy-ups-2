@@ -27,6 +27,12 @@ img {
   background-size: cover;
 }
 
+#game_elements {
+  grid-area: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
 #start {
   overflow: hidden;
 }
@@ -36,4 +42,9 @@ img {
 
 #level_complete {
   overflow: hidden;
+}
+
+#game_ui {
+  grid-area: 1 / 1;
+  position: relative;
 }
