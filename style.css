@@ -11,6 +11,8 @@ img {
   grid-template-rows: 100%;
   aspect-ratio: 16 / 9;
   width: 100%;
+  outline: solid black;
+  background: rgba(255, 0, 0, 0.25);
 }
 #game {
   grid-area: 1 / 1;
@@ -19,6 +21,8 @@ img {
   display: grid;
   grid-template-columns: 10% / 10%;
   grid-template-rows: 100%;
+  outline: solid black;
+  background: rgba(255, 0, 0, 0.25);
 }
 
 #game_background {
@@ -33,18 +37,81 @@ img {
   overflow: hidden;
 }
 
+#football1_sprite {
+  width: 10%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+}
+#golden_football1_sprite {
+  width: 7%;
+  position: absolute;
+  top: 25%;
+  left: 51%;
+}
+#small_bombs1_sprite {
+  width: 9.5%;
+  position: absolute;
+  top: 12%;
+  left: 50.9%;
+}
+#ligtning2_sprite {
+  width: 4%;
+  position: absolute;
+  top: 0.02%;
+  left: 53.5%;
+}
+
+#boy1_sprite {
+  width: 20%;
+  position: absolute;
+  top: 55%;
+  left: 47%;
+}
+
 #start {
   overflow: hidden;
+  outline: solid black;
+  background: rgba(255, 0, 0, 0.25);
 }
 #gameover {
   overflow: hidden;
+  outline: solid black;
+  background: rgba(255, 0, 0, 0.25);
 }
 
 #level_complete {
   overflow: hidden;
+  outline: solid black;
+  background: rgba(255, 0, 0, 0.25);
 }
 
 #game_ui {
   grid-area: 1 / 1;
   position: relative;
+}
+
+#scoere_board {
+  width: 23%;
+  position: absolute;
+  top: 70%;
+  left: 11%;
+}
+#health_hearts1 {
+  width: 23%;
+  position: absolute;
+  top: 20%;
+  left: 11%;
+}
+#health_hearts2 {
+  width: 23%;
+  position: absolute;
+  top: 20%;
+  left: 11%;
+}
+#health_hearts3 {
+  width: 23%;
+  position: absolute;
+  top: 20%;
+  left: 11%;
 }
