@@ -28,7 +28,7 @@ img {
 
 #game_background {
   grid-area: 1 / 1;
-  background-image: url(carlitos-Cartoon-Landscape.svg);
+  background-image: url(baggrund-færdig.png);
   background-size: cover;
 }
 
@@ -50,10 +50,10 @@ img {
   top: 25%;
   left: 51%;
 }
-#small_bombs1_sprite {
+#bomb1_sprite {
   width: 9.5%;
   position: absolute;
-  top: 12%;
+  top: 10%;
   left: 50.9%;
 }
 #ligtning2_sprite {
@@ -61,13 +61,6 @@ img {
   position: absolute;
   top: 0.02%;
   left: 53.5%;
-}
-
-#boy1_sprite {
-  width: 20%;
-  position: absolute;
-  top: 55%;
-  left: 47%;
 }
 
 #start {
