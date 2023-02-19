@@ -3,29 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keepy ups!</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css">
   </head>
   <body>
     <div id="screen">
       <div id="game">
         <div id="game_background"></div>
         <div id="game_elements">
-          <div id="ball1_container" class="falling">
-            <img id="ball1_sprite" src="1393757333.svg" alt="ball1"/>
+          <div id="football1_container" class="falling">
+          <img id="football1_sprite" src="1393757333.svg" alt="football" />
         </div>
 
-        <div id="golden_football1_container"">
-        <img
-          id="golden_football1_sprite"
-          src="goldenball.svg"
-          alt="guldboldt"
-        />
+        <div id="golden_football1_container" class="falling">
+        <img id="golden_football1_sprite" src="goldenball.svg" alt="" />
       </div>
 
-      <div id="bomb1_container">
-      <img id="bomb1_sprite" src="bomb.svg" alt="bombe"/>
+      <div id="small_bombs1_container"></div>
+      <img id="small_bombs1_sprite" src="bomb.svg" alt="" />
       <div />
 
       <!-- <div id="small_bombs2_contaier"></div>
@@ -35,17 +32,17 @@
       <!-- <div id="lightning1_container"></div>
     <img id="ligtning1_sprite" src="Stylized-Lightning-Bolt.svg"alt="">
 </div> -->
-      <div id="lightning2_container">
-      <img id="ligtning2_sprite" src="Stylized-Lightning-Bolt.svg" alt="lyn"/>
+      <div id="lightning2_container"></div>
+      <img id="ligtning2_sprite" src="Stylized-Lightning-Bolt.svg" alt="" />
     </div>
 
     <!-- <div id="boy1_container"></div>
     <img id="boy1_sprite" src="Walk (12).png"alt="">
     <div/> -->
-    <div id="game_ui">
-      <div id="game_elements">
-        <div id="game_foreground"></div>
 
+    <div id="game_elements">
+      <div id="game_foreground"></div>
+      <div id="game_ui">
         <img id="scoere_board" src="numbric-1.svg" />
         <img id="health_hearts1" src="1646656079PixelArt-Heart-1.svg" />
         <img id="health_hearts2" src="1646656079PixelArt-Heart-1.svg" />

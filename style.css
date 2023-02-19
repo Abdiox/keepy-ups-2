@@ -38,7 +38,7 @@ img {
   overflow: hidden;
 }
 
-#ball1_sprite {
+#football1_sprite {
   width: 10%;
   position: absolute;
   top: 35%;
@@ -51,10 +51,10 @@ img {
   top: 25%;
   left: 51%;
 }
-#bomb1_sprite {
+#small_bombs1_sprite {
   width: 9.5%;
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 50.9%;
 }
 #ligtning2_sprite {
