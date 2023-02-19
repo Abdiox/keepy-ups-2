@@ -38,12 +38,13 @@ img {
   overflow: hidden;
 }
 
-#football1_sprite {
+#ball1_sprite {
   width: 10%;
   position: absolute;
   top: 35%;
   left: 50%;
 }
+
 #golden_football1_sprite {
   width: 7%;
   position: absolute;
