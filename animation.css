@@ -14,3 +14,99 @@
     transform: translate(0, 56.25vw);
   }
 }
+.zoom_out {
+  animation-name: zoom_out;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom_out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.falling2 {
+  animation-name: falling2;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling2 {
+  0% {
+    transform: translate(0, -100%);
+  }
+
+  100% {
+    transform: translate(0, 56.25vw);
+  }
+}
+.falling3 {
+  animation-name: falling3;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling3 {
+  0% {
+    transform: translate(0, -100%);
+  }
+
+  100% {
+    transform: translate(0, 56.25vw);
+  }
+}
+
+.explode {
+  animation-name: zoom_in;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes zoom_in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(10);
+  }
+}
+.falling4 {
+  animation-name: falling4;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling4 {
+  0% {
+    transform: translate(0, -100%);
+  }
+
+  100% {
+    transform: translate(0, 56.25vw);
+  }
+}
+.ramt-af-lyn {
+  animation-name: glow;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 0 yellow);
+  }
+
+  to {
+    filter: drop-shadow(0 0 20px yellow);
+  }
+}
