@@ -82,31 +82,58 @@ img {
 }
 
 #game_ui {
-  grid-area: 1 / 1;
   position: relative;
+  top: 2vw;
+  right: 1vw;
+  color: white;
+
+  font-size: 2em;
+  font-family: sans-serif;
+
+  pointer-events: none;
+}
+/* #scoere_board {
+  width: 7%;
+  position: absolute;
+  top: 90%;
+  left: 11%;
+} */
+
+#ball_image {
+  width: 5%;
+  position: absolute;
+  top: 1%;
+  left: 93.5%;
 }
 
-#scoere_board {
-  width: 23%;
-  position: absolute;
-  top: 70%;
-  left: 11%;
+#ball_count {
+  white-space: nowrap;
+  text-align: right;
+}
+#life_board {
+  margin-block-start: 0.2em;
+  display: grid;
+  grid-template-columns: 1.2em 1.2em 1.2em;
+}
+
+#life_board img {
+  width: 5%;
 }
 #health_hearts1 {
-  width: 23%;
+  width: 7%;
   position: absolute;
-  top: 20%;
-  left: 11%;
+  top: 160%;
+  left: 80%;
 }
 #health_hearts2 {
-  width: 23%;
+  width: 7%;
   position: absolute;
-  top: 20%;
-  left: 11%;
+  top: 160%;
+  left: 86%;
 }
 #health_hearts3 {
-  width: 23%;
+  width: 7%;
   position: absolute;
-  top: 20%;
-  left: 11%;
+  top: 160%;
+  left: 92%;
 }
