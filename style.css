@@ -12,7 +12,6 @@ img {
   grid-template-rows: 100%;
   aspect-ratio: 16 / 9;
   width: 100%;
-  outline: solid black;
   background: rgba(255, 0, 0, 0.25);
 }
 #game {
@@ -22,7 +21,6 @@ img {
   display: grid;
   grid-template-columns: 10% / 10%;
   grid-template-rows: 100%;
-  outline: solid black;
   background: rgba(255, 0, 0, 0.25);
 }
 
@@ -66,18 +64,15 @@ img {
 
 #start {
   overflow: hidden;
-  outline: solid black;
   background: rgba(255, 0, 0, 0.25);
 }
 #gameover {
   overflow: hidden;
-  outline: solid black;
   background: rgba(255, 0, 0, 0.25);
 }
 
 #level_complete {
   overflow: hidden;
-  outline: solid black;
   background: rgba(255, 0, 0, 0.25);
 }
 
@@ -100,16 +95,16 @@ img {
 } */
 
 #ball_image {
-  width: 5%;
+  width: 3%;
   position: absolute;
   top: 1%;
   left: 93.5%;
 }
 
 #ball_count {
-  white-space: nowrap;
-  text-align: right;
+  margin-left: 90%;
 }
+
 #life_board {
   margin-block-start: 0.2em;
   display: grid;
