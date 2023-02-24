@@ -7,12 +7,14 @@ window.addEventListener("load", start);
 
 function start() {
   console.log("Keepy ups!");
+
   points = 0;
-  lives = 0;
+  lives = 3;
 
   //animationer
   document.querySelector("#football1_container").classList.add("falling1");
   document.querySelector("#golden1_container").classList.add("falling2");
+  document.querySelector("#bomb1_container").classList.add("falling3");
 
   //clicks
   document
@@ -22,6 +24,10 @@ function start() {
   document
     .querySelector("#golden1_container")
     .addEventListener("click", clickGolden);
+
+  document
+    .querySelector("#bomb1_container")
+    .addEventListener("click", clickBomb);
 }
 
 function clickBall() {
@@ -92,6 +98,40 @@ function goldenGone() {
     .querySelector("#golden1_container")
     .addEventListener("click", clickGolden);
 }
+function clickBomb() {
+  console.log("clickBomb");
+  document
+    .querySelector("#bomb1_container")
+    .removeEventListener("click", clickBomb);
+
+  document.querySelector("#bomb1_container").classList.add("paused");
+
+  document.querySelector("#bomb1_sprite").classList.add("zoom_in");
+
+  document
+    .querySelector("#bomb1_container")
+    .addEventListener("animationend", bombGone);
+
+  decrementPoints();
+}
+
+function bombGone() {
+  document
+    .querySelector("#bomb1_container")
+    .removeEventListener("animationed", bombGone);
+
+  document.querySelector("#bomb1_sprite").classList.remove("zoom_in");
+
+  document.querySelector("#bomb1_container").classList.remove("paused");
+
+  document.querySelector("#bomb1_container").classList.remove("falling3");
+  document.querySelector("#bomb1_container").offsetWidth;
+  document.querySelector("#bomb1_container").classList.add("falling3");
+
+  document
+    .querySelector("#bomb1_container")
+    .addEventListener("click", clickBomb);
+}
 
 function incrementPoints() {
   console.log("incrementPoints");
@@ -103,6 +143,15 @@ function displayPoints() {
   document.querySelector("#ball_count").textContent = points;
 }
 
+function decrementPoints() {
+  console.log("decrementPoints");
+  points--;
+  displayPoints();
+}
+
+function displayPoints() {
+  document.querySelector("#ball_count").textContent = points;
+}
 //ball animatiom
 
 //Level complete koder:
