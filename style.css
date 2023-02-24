@@ -43,7 +43,7 @@ img {
   left: 50%;
 }
 
-#golden_football1_sprite {
+#golden1_sprite {
   width: 7%;
   position: absolute;
   top: 25%;
@@ -117,18 +117,18 @@ img {
 #health_hearts1 {
   width: 7%;
   position: absolute;
-  top: 160%;
+  top: 100%;
   left: 80%;
 }
 #health_hearts2 {
   width: 7%;
   position: absolute;
-  top: 160%;
+  top: 100%;
   left: 86%;
 }
 #health_hearts3 {
   width: 7%;
   position: absolute;
-  top: 160%;
+  top: 100%;
   left: 92%;
 }
