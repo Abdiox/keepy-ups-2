@@ -8,13 +8,14 @@ window.addEventListener("load", start);
 function start() {
   console.log("Keepy ups!");
 
-  points = 0;
-  lives = 3;
+  // points = 0;
+  // lives = 3;
 
   //animationer
   document.querySelector("#football1_container").classList.add("falling1");
   document.querySelector("#golden1_container").classList.add("falling2");
   document.querySelector("#bomb1_container").classList.add("falling3");
+  document.querySelector("#lightning2_container").classList.add("falling4");
 
   //clicks
   document
@@ -28,6 +29,10 @@ function start() {
   document
     .querySelector("#bomb1_container")
     .addEventListener("click", clickBomb);
+
+  document
+    .querySelector("#lightning2_container")
+    .addEventListener("click", clickLightning);
 }
 
 function clickBall() {
@@ -79,6 +84,7 @@ function clickGolden() {
     .addEventListener("animationend", goldenGone);
 
   incrementPoints();
+  incrementedLives();
 }
 
 function goldenGone() {
@@ -111,8 +117,7 @@ function clickBomb() {
   document
     .querySelector("#bomb1_container")
     .addEventListener("animationend", bombGone);
-
-  decrementPoints();
+  decrementedLives();
 }
 
 function bombGone() {
@@ -131,6 +136,43 @@ function bombGone() {
   document
     .querySelector("#bomb1_container")
     .addEventListener("click", clickBomb);
+  decrementPoints();
+}
+
+function clickLightning() {
+  console.log("clickLightning");
+
+  document
+    .querySelector("#lightning2_container")
+    .removeEventListener("click", clickLightning);
+
+  document.querySelector("#lightning2_container").classList.add("paused");
+
+  document.querySelector("#ligtning2_sprite").classList.add("zoom_in");
+
+  document
+    .querySelector("#lightning2_container")
+    .addEventListener("animationend", lightningGone);
+
+  decrementPoints();
+}
+
+function lightningGone() {
+  document
+    .querySelector("#lightning2_container")
+    .removeEventListener("animationend", lightningGone);
+
+  document.querySelector("#ligtning2_sprite").classList.remove("zoom_out");
+
+  document.querySelector("#lightning2_container").classList.remove("paused");
+
+  document.querySelector("#lightning2_container").classList.remove("falling4");
+  document.querySelector("#lightning2_container").offsetWidth;
+  document.querySelector("#lightning2_container").classList.add("falling4");
+
+  document
+    .querySelector("#lightning2_container")
+    .addEventListener("click", lightningGone);
 }
 
 function incrementPoints() {
@@ -150,8 +192,39 @@ function decrementPoints() {
 }
 
 function displayPoints() {
+  console.log("points");
   document.querySelector("#ball_count").textContent = points;
 }
+
+function decrementedLives() {
+  lives--;
+  console.log("decrementLives");
+  // if (lives <= 0) {
+  //   gameOver();
+  // } else {
+  showDecrementedLives();
+}
+
+function incrementedLives() {
+  console.log("få et liv");
+  // if (lives >= 3) {
+  //   lives;
+  // } else lives++;
+  showIncrementedLives();
+}
+
+function showDecrementedLives() {
+  document.querySelector("#health" + (lives + 1)).classList.add("broken_heart");
+  document
+    .querySelector("#health" + (lives + 1))
+    .classList.remove("full_heart");
+}
+
+function showIncrementedLives() {
+  document.querySelector("#health" + lives).classList.remove("broken_heart");
+  document.querySelector("#health" + lives).classList.add("full_heart");
+}
+
 //ball animatiom
 
 //Level complete koder:

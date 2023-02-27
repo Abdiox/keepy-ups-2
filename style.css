@@ -114,21 +114,33 @@ img {
 #life_board img {
   width: 5%;
 }
-#health_hearts1 {
+#health1 {
   width: 7%;
   position: absolute;
   top: 100%;
   left: 80%;
 }
-#health_hearts2 {
+#health2 {
   width: 7%;
   position: absolute;
   top: 100%;
   left: 86%;
 }
-#health_hearts3 {
+#health3 {
   width: 7%;
   position: absolute;
   top: 100%;
   left: 92%;
+}
+
+.ball_image {
+  filter: drop-shadow(0 0 10px blue);
+}
+
+.whole_heart {
+  filter: drop-shadow(0 0 2px blue);
+}
+
+.broken_heart {
+  filter: grayscale(75%) blur(0.5px);
 }
