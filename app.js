@@ -1,5 +1,4 @@
 "use strict";
-console.log(this);
 
 let points = 0;
 let lives = 3;
@@ -13,13 +12,12 @@ function start() {
   // lives = 3;
 
   //animationer
-  startAnimationer();
+  document.querySelector("#football1_container").classList.add("falling1");
+  document.querySelector("#golden1_container").classList.add("falling2");
+  document.querySelector("#bomb1_container").classList.add("falling3");
+  document.querySelector("#lightning2_container").classList.add("falling4");
 
   //clicks
-  registrerKlik();
-}
-
-function registrerKlik() {
   document
     .querySelector("#football1_container")
     .addEventListener("click", clickBall);
@@ -37,43 +35,39 @@ function registrerKlik() {
     .addEventListener("click", clickLightning);
 }
 
-function startAnimationer() {
-  document.querySelector("#football1_container").classList.add("falling1");
-  document.querySelector("#golden1_container").classList.add("falling2");
-  document.querySelector("#bomb1_container").classList.add("falling3");
-  document.querySelector("#lightning2_container").classList.add("falling4");
-}
-
 function clickBall() {
   console.log("clickBall");
-  console.log(this);
+  document
+    .querySelector("#football1_container")
+    .removeEventListener("click", clickBall);
 
-  let ball = this;
+  document.querySelector("#football1_container").classList.add("paused");
 
-  ball.removeEventListener("click", clickBall);
+  document.querySelector("#football1_sprite").classList.add("zoom_out");
 
-  ball.classList.add("paused");
-
-  ball.querySelector("img").classList.add("zoom_out");
-
-  ball.addEventListener("animationend", ballGone);
+  document
+    .querySelector("#football1_container")
+    .addEventListener("animationend", ballGone);
 
   incrementPoints();
 }
 
 function ballGone() {
-  console.log("ballGone");
-  console.log = this;
-  ball.removeEventListener("animationend", ballGone);
+  document
+    .querySelector("#football1_container")
+    .removeEventListener("animationend", ballGone);
 
-  ball.querySelector("img").classList.remove("zoom_out");
+  document.querySelector("#football1_sprite").classList.remove("zoom_out");
 
-  ball.classList.remove("paused");
+  document.querySelector("#football1_container").classList.remove("paused");
 
-  ball.classList.remove("falling1");
-  ball.offsetWidth;
-  ball.classList.add("falling1");
-  ball.addEventListener("click", clickBall);
+  document.querySelector("#football1_container").classList.remove("falling1");
+  document.querySelector("#football1_container").offsetWidth;
+  document.querySelector("#football1_container").classList.add("falling1");
+
+  document
+    .querySelector("#football1_container")
+    .addEventListener("click", clickBall);
 }
 function clickGolden() {
   console.log("clickGolden");
