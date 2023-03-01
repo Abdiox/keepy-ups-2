@@ -59,7 +59,7 @@ img {
   display: grid;
   justify-content: center;
   align-content: center;
-  background-image: linear-gradient(150deg, #c90303 0%, #790909 100%);
+  background-image: linear-gradient(160deg, #c90303 0%, black 80%);
   color: #ffffff;
 }
 
@@ -70,7 +70,7 @@ img {
   display: grid;
   justify-content: center;
   align-content: center;
-  background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
+  background-image: linear-gradient(170deg, blue 0%, red 100%);
   color: #ffffff;
 }
 
@@ -161,4 +161,14 @@ img {
 
 .broken_heart {
   filter: grayscale(75%) blur(0.5px);
+}
+button {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  margin: auto;
+  background-color: blue;
+  color: #ffffff;
+  border: 10px solid blue;
+  cursor: pointer;
+  border-radius: 10px;
 }
