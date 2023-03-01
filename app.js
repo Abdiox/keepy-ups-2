@@ -15,13 +15,11 @@ function startGame() {
   lives = 3;
   document.querySelector("#start").classList.add("hidden");
 
-  //animationer
   document.querySelector("#football1_container").classList.add("falling1");
   document.querySelector("#golden1_container").classList.add("falling2");
   document.querySelector("#bomb1_container").classList.add("falling3");
   document.querySelector("#lightning2_container").classList.add("falling4");
 
-  //clicks
   document.querySelector("#football1_container").addEventListener("click", clickBall);
 
   document.querySelector("#golden1_container").addEventListener("click", clickGolden);
@@ -33,6 +31,7 @@ function startGame() {
 
 function clickBall() {
   console.log("clickBall");
+
   document.querySelector("#football1_container").removeEventListener("click", clickBall);
 
   document.querySelector("#football1_container").classList.add("paused");
@@ -61,6 +60,7 @@ function ballGone() {
 
   document.querySelector("#football1_container").addEventListener("click", clickBall);
 }
+
 function clickGolden() {
   console.log("clickGolden");
   document.querySelector("#golden1_container").removeEventListener("click", clickGolden);
@@ -76,8 +76,11 @@ function clickGolden() {
   incrementPoints();
   incrementPoints();
 
-  incrementedLives();
+  // incrementedLives();
 
+  if (lives < 3) {
+    incrementLives();
+  }
   document.querySelector("#sound_golden").play();
 }
 
@@ -187,10 +190,8 @@ function decrementedLives() {
 }
 
 function incrementedLives() {
-  console.log("få et liv");
-  // if (lives >= 3) {
-  //   lives;
-  // } else lives++;
+  console.log("incrementLives");
+  lives++;
   showIncrementedLives();
 }
 

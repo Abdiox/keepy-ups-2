@@ -1,22 +1,38 @@
 body {
   margin: 0;
   overflow: hidden;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-size: 4em;
+  margin: 0;
+}
+
+p {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 1em 0 1.5em;
 }
 
 img {
   width: 100%;
 }
-#screen {
-  aspect-ratio: 16 / 9;
 
+#screen {
   display: grid;
-  grid-template: 100% / 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  width: 100%;
+  aspect-ratio: 16/9;
 }
 #game {
-  grid-area: 1 / 1;
-
+  grid-area: 1/1;
   display: grid;
-  grid-template: 100% / 100%;
+  background-color: red;
+  overflow: hidden;
+  grid-template-columns: 10%/10%;
+  grid-template-rows: 100%;
 }
 
 #game_background {
@@ -30,30 +46,32 @@ img {
   position: relative;
   overflow: hidden;
 }
+.hidden,
+#game_over.hidden,
+#level_complete.hidden,
+#start.hidden,
+#game.hidden {
+  display: none;
+}
 #game_over {
+  grid-area: 1 /1;
+  z-index: 999;
   display: grid;
-  justify-content: center;
-  align-content: center;
   justify-content: center;
   align-content: center;
   background-image: linear-gradient(150deg, #c90303 0%, #790909 100%);
   color: #ffffff;
 }
+
 #level_complete,
 #start {
+  grid-area: 1 /1;
+  z-index: 999;
   display: grid;
   justify-content: center;
   align-content: center;
   background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
   color: #ffffff;
-  overflow: hidden;
-}
-.hidden,
-#game_over.hidden,
-#level_complete.hidden,
-#game.hidden,
-#start.hidden {
-  display: none;
 }
 
 #football1_sprite {
