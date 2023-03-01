@@ -11,9 +11,12 @@ function start() {
 }
 
 function startGame() {
+  document.querySelector("#ingame_sound").play();
+
   points = 0;
   lives = 3;
   document.querySelector("#start").classList.add("hidden");
+  document.querySelector("#start_level").play();
 
   document.querySelector("#football1_container").classList.add("falling1");
   document.querySelector("#golden1_container").classList.add("falling2");
@@ -211,9 +214,27 @@ function gameOver() {
   console.log("Game Over");
   document.querySelector("#game_over").classList.remove("hidden");
   document.querySelector("#lost_game").play();
+  stopGame();
 }
 function levelComplete() {
   console.log("Level Complete");
   document.querySelector("#level_complete").classList.remove("hidden");
   document.querySelector("#level_done").play();
+  stopGame();
+}
+
+function stopGame() {
+  document.querySelector("#ingame_sound").pause();
+  document.querySelector("#football1_container").classList.remove("falling1");
+  document.querySelector("#golden1_container").classList.remove("falling2");
+  document.querySelector("#bomb1_container").classList.remove("falling3");
+  document.querySelector("#lightning2_container").classList.remove("falling4");
+
+  document.querySelector("#football1_container").removeEventListener("click", clickBall);
+
+  document.querySelector("#golden1_container").removeEventListener("click", clickGolden);
+
+  document.querySelector("#bomb1_container").removeEventListener("click", clickBomb);
+
+  document.querySelector("#lightning2_container").removeEventListener("click", clickLightning);
 }
