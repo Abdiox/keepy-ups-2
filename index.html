@@ -25,7 +25,7 @@
 
 
       <div id="lightning2_container" class="falling4">
-          <img id="ligtning2_sprite" class="glow" src="svg/Stylized-Lightning-Bolt.svg" alt="" />
+          <img id="ligtning2_sprite" src="svg/Stylized-Lightning-Bolt.svg" alt="" />
     </div>
 
 
@@ -55,9 +55,11 @@
         <button id="btn_start" class="pulse">Start</button>
       </div>
       <div id="game_over" class="hidden">
-        <h2>Shiiit.. Du klarede den sku ikke😬</h2>
+        <h2> Shiiit.. Du klarede den sku ikke😬</h2>
+                <button id="btn_start" class="pulse">Prøv igen</button>
+
       </div>
-      <div id="level_complete" class="hidden">
+      <div id="level_complete" class="hidden" class="glow">
         <h2>Yessir! Du klarede den😈</h2>
       </div>
     </div>
@@ -67,6 +69,9 @@
 <audio id="sound_bomb" src="sound/8bit_bomb_explosion.wav"></audio>
 <audio id="sound_golden" src="sound/ball.sideborder.wav"></audio>
 <audio id="sound_thunder" src="sound/rock_breaking.flac"></audio>
+<audio id="lost_game" src="sound/080205_life-lost-game-over-89697.mp3"></audio>
+<audio id="level_done" src="sound/All The Way Up Clip.mp3"></audio>
+
 
     <script src="app.js"></script>
   

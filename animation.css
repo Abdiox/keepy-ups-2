@@ -125,12 +125,10 @@
   animation-direction: alternate;
 }
 
-/* .ramt-af-lyn {
+.glow {
   animation-name: glow;
-  animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 @keyframes glow {
@@ -141,4 +139,4 @@
   to {
     filter: drop-shadow(0 0 20px yellow);
   }
-} */
+}

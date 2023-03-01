@@ -138,6 +138,8 @@ function clickLightning() {
   document.querySelector("#lightning2_container").addEventListener("animationend", lightningGone);
 
   decrementPoints();
+  document.querySelector("#sound_thunder").currentTime = 0;
+
   document.querySelector("#sound_thunder").play();
 }
 
@@ -208,8 +210,10 @@ function showIncrementedLives() {
 function gameOver() {
   console.log("Game Over");
   document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#lost_game").play();
 }
 function levelComplete() {
   console.log("Level Complete");
   document.querySelector("#level_complete").classList.remove("hidden");
+  document.querySelector("#level_done").play();
 }
