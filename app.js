@@ -7,9 +7,13 @@ window.addEventListener("load", start);
 
 function start() {
   console.log("Keepy ups!");
+  document.querySelector("#btn_start").addEventListener("click", startGame);
+}
 
-  // points = 0;
-  // lives = 3;
+function startGame() {
+  points = 0;
+  lives = 3;
+  document.querySelector("#start").classList.add("hidden");
 
   //animationer
   document.querySelector("#football1_container").classList.add("falling1");
@@ -36,6 +40,10 @@ function clickBall() {
   document.querySelector("#football1_sprite").classList.add("zoom_out");
 
   document.querySelector("#football1_container").addEventListener("animationend", ballGone);
+
+  document.querySelector("#sound_ball").currentTime = 0;
+
+  document.querySelector("#sound_ball").play();
 
   incrementPoints();
 }
@@ -65,6 +73,8 @@ function clickGolden() {
 
   incrementPoints();
   incrementedLives();
+
+  document.querySelector("#sound_golden").play();
 }
 
 function goldenGone() {
@@ -89,7 +99,9 @@ function clickBomb() {
   document.querySelector("#bomb1_sprite").classList.add("zoom_in");
 
   document.querySelector("#bomb1_container").addEventListener("animationend", bombGone);
+
   decrementedLives();
+  document.querySelector("#sound_bomb").play();
 }
 
 function bombGone() {
@@ -119,6 +131,7 @@ function clickLightning() {
   document.querySelector("#lightning2_container").addEventListener("animationend", lightningGone);
 
   decrementPoints();
+  document.querySelector("#sound_thunder").play();
 }
 
 function lightningGone() {
@@ -133,12 +146,16 @@ function lightningGone() {
   document.querySelector("#lightning2_container").classList.add("falling4");
 
   document.querySelector("#lightning2_container").addEventListener("click", lightningGone);
+  gameOver();
 }
 
 function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
+  if (points >= 10) {
+    levelComplete();
+  }
 }
 
 function displayPoints() {
@@ -159,9 +176,9 @@ function displayPoints() {
 function decrementedLives() {
   lives--;
   console.log("decrementLives");
-  // if (lives <= 0) {
-  //   gameOver();
-  // } else {
+  if (lives <= 0) {
+    gameOver();
+  }
   showDecrementedLives();
 }
 
@@ -183,18 +200,11 @@ function showIncrementedLives() {
   document.querySelector("#health" + lives).classList.add("full_heart");
 }
 
-//ball animatiom
-
-//Level complete koder:
-// if (lives <= 0) {
-//   gameOver();
-// } else {
-//   levelComplete();
-// }
-
-// function gameOver() {
-//   console.log("Game Over");
-// }
-// function levelComplete() {
-//   console.log("Level Complete");
-// }
+function gameOver() {
+  console.log("Game Over");
+  document.querySelector("#game_over").classList.remove("hidden");
+}
+function levelComplete() {
+  console.log("Level Complete");
+  document.querySelector("#level_complete").classList.remove("hidden");
+}

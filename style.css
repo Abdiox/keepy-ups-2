@@ -7,21 +7,16 @@ img {
   width: 100%;
 }
 #screen {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
   aspect-ratio: 16 / 9;
-  width: 100%;
-  background: rgba(255, 0, 0, 0.25);
+
+  display: grid;
+  grid-template: 100% / 100%;
 }
 #game {
   grid-area: 1 / 1;
-  background-color: red;
-  overflow: hidden;
+
   display: grid;
-  grid-template-columns: 10% / 10%;
-  grid-template-rows: 100%;
-  background: rgba(255, 0, 0, 0.25);
+  grid-template: 100% / 100%;
 }
 
 #game_background {
@@ -34,6 +29,31 @@ img {
   grid-area: 1 / 1;
   position: relative;
   overflow: hidden;
+}
+#game_over {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #c90303 0%, #790909 100%);
+  color: #ffffff;
+}
+#level_complete,
+#start {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
+  color: #ffffff;
+  overflow: hidden;
+}
+.hidden,
+#game_over.hidden,
+#level_complete.hidden,
+#game.hidden,
+#start.hidden {
+  display: none;
 }
 
 #football1_sprite {
@@ -62,20 +82,6 @@ img {
   left: 53.5%;
 }
 
-#start {
-  overflow: hidden;
-  background: rgba(255, 0, 0, 0.25);
-}
-#gameover {
-  overflow: hidden;
-  background: rgba(255, 0, 0, 0.25);
-}
-
-#level_complete {
-  overflow: hidden;
-  background: rgba(255, 0, 0, 0.25);
-}
-
 #game_ui {
   position: relative;
   top: 2vw;
@@ -87,12 +93,6 @@ img {
 
   pointer-events: none;
 }
-/* #scoere_board {
-  width: 7%;
-  position: absolute;
-  top: 90%;
-  left: 11%;
-} */
 
 #ball_image {
   width: 3%;
