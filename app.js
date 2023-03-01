@@ -18,44 +18,30 @@ function start() {
   document.querySelector("#lightning2_container").classList.add("falling4");
 
   //clicks
-  document
-    .querySelector("#football1_container")
-    .addEventListener("click", clickBall);
+  document.querySelector("#football1_container").addEventListener("click", clickBall);
 
-  document
-    .querySelector("#golden1_container")
-    .addEventListener("click", clickGolden);
+  document.querySelector("#golden1_container").addEventListener("click", clickGolden);
 
-  document
-    .querySelector("#bomb1_container")
-    .addEventListener("click", clickBomb);
+  document.querySelector("#bomb1_container").addEventListener("click", clickBomb);
 
-  document
-    .querySelector("#lightning2_container")
-    .addEventListener("click", clickLightning);
+  document.querySelector("#lightning2_container").addEventListener("click", clickLightning);
 }
 
 function clickBall() {
   console.log("clickBall");
-  document
-    .querySelector("#football1_container")
-    .removeEventListener("click", clickBall);
+  document.querySelector("#football1_container").removeEventListener("click", clickBall);
 
   document.querySelector("#football1_container").classList.add("paused");
 
   document.querySelector("#football1_sprite").classList.add("zoom_out");
 
-  document
-    .querySelector("#football1_container")
-    .addEventListener("animationend", ballGone);
+  document.querySelector("#football1_container").addEventListener("animationend", ballGone);
 
   incrementPoints();
 }
 
 function ballGone() {
-  document
-    .querySelector("#football1_container")
-    .removeEventListener("animationend", ballGone);
+  document.querySelector("#football1_container").removeEventListener("animationend", ballGone);
 
   document.querySelector("#football1_sprite").classList.remove("zoom_out");
 
@@ -65,32 +51,24 @@ function ballGone() {
   document.querySelector("#football1_container").offsetWidth;
   document.querySelector("#football1_container").classList.add("falling1");
 
-  document
-    .querySelector("#football1_container")
-    .addEventListener("click", clickBall);
+  document.querySelector("#football1_container").addEventListener("click", clickBall);
 }
 function clickGolden() {
   console.log("clickGolden");
-  document
-    .querySelector("#golden1_container")
-    .removeEventListener("click", clickGolden);
+  document.querySelector("#golden1_container").removeEventListener("click", clickGolden);
 
   document.querySelector("#golden1_container").classList.add("paused");
 
   document.querySelector("#golden1_sprite").classList.add("zoom_out");
 
-  document
-    .querySelector("#golden1_container")
-    .addEventListener("animationend", goldenGone);
+  document.querySelector("#golden1_container").addEventListener("animationend", goldenGone);
 
   incrementPoints();
   incrementedLives();
 }
 
 function goldenGone() {
-  document
-    .querySelector("#golden1_container")
-    .removeEventListener("animationed", goldenGone);
+  document.querySelector("#golden1_container").removeEventListener("animationed", goldenGone);
 
   document.querySelector("#golden1_sprite").classList.remove("zoom_out");
 
@@ -100,30 +78,22 @@ function goldenGone() {
   document.querySelector("#golden1_container").offsetWidth;
   document.querySelector("#golden1_container").classList.add("falling2");
 
-  document
-    .querySelector("#golden1_container")
-    .addEventListener("click", clickGolden);
+  document.querySelector("#golden1_container").addEventListener("click", clickGolden);
 }
 function clickBomb() {
   console.log("clickBomb");
-  document
-    .querySelector("#bomb1_container")
-    .removeEventListener("click", clickBomb);
+  document.querySelector("#bomb1_container").removeEventListener("click", clickBomb);
 
   document.querySelector("#bomb1_container").classList.add("paused");
 
   document.querySelector("#bomb1_sprite").classList.add("zoom_in");
 
-  document
-    .querySelector("#bomb1_container")
-    .addEventListener("animationend", bombGone);
+  document.querySelector("#bomb1_container").addEventListener("animationend", bombGone);
   decrementedLives();
 }
 
 function bombGone() {
-  document
-    .querySelector("#bomb1_container")
-    .removeEventListener("animationed", bombGone);
+  document.querySelector("#bomb1_container").removeEventListener("animationed", bombGone);
 
   document.querySelector("#bomb1_sprite").classList.remove("zoom_in");
 
@@ -133,34 +103,26 @@ function bombGone() {
   document.querySelector("#bomb1_container").offsetWidth;
   document.querySelector("#bomb1_container").classList.add("falling3");
 
-  document
-    .querySelector("#bomb1_container")
-    .addEventListener("click", clickBomb);
+  document.querySelector("#bomb1_container").addEventListener("click", clickBomb);
   decrementPoints();
 }
 
 function clickLightning() {
   console.log("clickLightning");
 
-  document
-    .querySelector("#lightning2_container")
-    .removeEventListener("click", clickLightning);
+  document.querySelector("#lightning2_container").removeEventListener("click", clickLightning);
 
   document.querySelector("#lightning2_container").classList.add("paused");
 
   document.querySelector("#ligtning2_sprite").classList.add("zoom_in");
 
-  document
-    .querySelector("#lightning2_container")
-    .addEventListener("animationend", lightningGone);
+  document.querySelector("#lightning2_container").addEventListener("animationend", lightningGone);
 
   decrementPoints();
 }
 
 function lightningGone() {
-  document
-    .querySelector("#lightning2_container")
-    .removeEventListener("animationend", lightningGone);
+  document.querySelector("#lightning2_container").removeEventListener("animationend", lightningGone);
 
   document.querySelector("#ligtning2_sprite").classList.remove("zoom_out");
 
@@ -170,9 +132,7 @@ function lightningGone() {
   document.querySelector("#lightning2_container").offsetWidth;
   document.querySelector("#lightning2_container").classList.add("falling4");
 
-  document
-    .querySelector("#lightning2_container")
-    .addEventListener("click", lightningGone);
+  document.querySelector("#lightning2_container").addEventListener("click", lightningGone);
 }
 
 function incrementPoints() {
@@ -215,9 +175,7 @@ function incrementedLives() {
 
 function showDecrementedLives() {
   document.querySelector("#health" + (lives + 1)).classList.add("broken_heart");
-  document
-    .querySelector("#health" + (lives + 1))
-    .classList.remove("full_heart");
+  document.querySelector("#health" + (lives + 1)).classList.remove("full_heart");
 }
 
 function showIncrementedLives() {
