@@ -72,6 +72,10 @@ function clickGolden() {
   document.querySelector("#golden1_container").addEventListener("animationend", goldenGone);
 
   incrementPoints();
+  incrementPoints();
+  incrementPoints();
+  incrementPoints();
+
   incrementedLives();
 
   document.querySelector("#sound_golden").play();
@@ -153,7 +157,7 @@ function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
-  if (points >= 10) {
+  if (points >= 30) {
     levelComplete();
   }
 }

@@ -21,7 +21,7 @@ img {
 
 #game_background {
   grid-area: 1 / 1;
-  background-image: url(baggrund-færdig.png);
+  background-image: url(svg/baggrund-færdig.png);
   background-size: cover;
 }
 
