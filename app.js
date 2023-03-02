@@ -1,20 +1,52 @@
 "use strict";
 
-let points = 0;
-let lives = 3;
-
 window.addEventListener("load", start);
+let points = 0;
+let lives = 0;
 
 function start() {
   console.log("Keepy ups!");
   document.querySelector("#btn_start").addEventListener("click", startGame);
+  document.querySelector("#btn_gameover").addEventListener("click", startGame);
+  document.querySelector("#btn_genstart").addEventListener("click", showStartScreen);
 }
 
+function showGameScreen() {
+  console.log("test");
+  document.querySelector("#start").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+}
+
+function showStartScreen() {
+  console.log("vis startSceen");
+  document.querySelector("#start").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+}
+
+function resetLives() {
+  lives = 3;
+  document.querySelector("#health1").classList.remove("broken_heart");
+  document.querySelector("#health2").classList.remove("broken_heart");
+  document.querySelector("#health3").classList.remove("broken_heart");
+  document.querySelector("#health1").classList.add("full_heart");
+  document.querySelector("#health2").classList.add("full_heart");
+  document.querySelector("#health3").classList.add("full_heart");
+}
+
+function resetPoints() {
+  points = 0;
+
+  displayPoints();
+}
 function startGame() {
+  resetLives();
+  resetPoints();
+  showGameScreen();
+  console.log("startGame");
   document.querySelector("#ingame_sound").play();
 
-  points = 0;
-  lives = 3;
   document.querySelector("#start").classList.add("hidden");
   document.querySelector("#start_level").play();
 
@@ -79,7 +111,7 @@ function clickGolden() {
   incrementPoints();
   incrementPoints();
 
-  // incrementedLives();
+  incrementedLives();
 
   if (lives < 3) {
     incrementLives();
@@ -165,7 +197,7 @@ function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
-  if (points >= 30) {
+  if (points >= 10) {
     levelComplete();
   }
 }

@@ -1,83 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Keepy ups!</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keepy ups!</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="animation.css">
-</head>
-<body>
-      <div id="screen">
+    <link rel="stylesheet" href="animation.css" />
+  </head>
+  <body>
+    <div id="screen">
       <div id="game">
         <div id="game_background"></div>
         <div id="game_elements">
-        <div id="football1_container" class="falling1">
+          <div id="football1_container" class="falling1">
             <img id="football1_sprite" src="svg/1393757333.svg" alt="football" />
-        </div>
-        <div id="golden1_container" class="falling2">
-            <img id="golden1_sprite"  src="svg/goldenball.svg" alt="golden" />
-      </div>
-      <div id="bomb1_container" class="falling3">
+          </div>
+          <div id="golden1_container" class="falling2">
+            <img id="golden1_sprite" src="svg/goldenball.svg" alt="golden" />
+          </div>
+          <div id="bomb1_container" class="falling3">
             <img id="bomb1_sprite" src="svg/bomb.svg" alt="bomb" />
-      </div>
+          </div>
 
+          <div id="lightning2_container" class="falling4">
+            <img id="ligtning2_sprite" src="svg/Stylized-Lightning-Bolt.svg" alt="" />
+          </div>
 
-      <div id="lightning2_container" class="falling4">
-          <img id="ligtning2_sprite" src="svg/Stylized-Lightning-Bolt.svg" alt="" />
-    </div>
-
-
-
-   <div id="game_ui">
-     <div id="score_board">
-        
-             <span id="ball_count" >0</span> 
-            <img id="ball_image" src="svg/soccer_ball2.png" class="ball_image" />
-
-
-
-       </div>
-                 <div id="life_board">
-        <img id="health1" src="svg/1646656079PixelArt-Heart-1.svg" class="full_heart"/>
-        <img id="health2" src="svg/1646656079PixelArt-Heart-1.svg" class="full_heart"/>
-        <img id="health3" src="svg/1646656079PixelArt-Heart-1.svg" class="full_heart"/>
-        </div>
-          <div id="time_board">
-            <div id="time_left"></div>
+          <div id="game_ui">
+            <div id="score_board">
+              <span id="ball_count">0</span>
+              <img id="ball_image" src="svg/soccer_ball2.png" class="ball_image" />
+            </div>
+            <div id="life_board">
+              <img id="health1" src="svg/1646656079PixelArt-Heart-1.svg" class="full_heart" />
+              <img id="health2" src="svg/1646656079PixelArt-Heart-1.svg" class="full_heart" />
+              <img id="health3" src="svg/1646656079PixelArt-Heart-1.svg" class="full_heart" />
+            </div>
+            <div id="time_board">
+              <div id="time_left"></div>
+            </div>
           </div>
         </div>
       </div>
       <div id="start">
         <h2>⚽Keepy Ups!⚽</h2>
-        <p>Få 30 point for at klarer spillet!</p>
+        <p>Spil lavet af Abdiox!</p>
+        <p>Klik på boldene for at få point</p>
+        <p>Når du når 30 point har du klaret spillet!</p>
+
         <button id="btn_start" class="pulse">Start</button>
       </div>
       <div id="game_over" class="hidden">
-        <h2> Shiiit.. Du klarede den sku ikke😬</h2>
-                <button id="btn_start" class="pulse">Prøv igen</button>
-
+        <h2>Shiiit.. Du klarede den sku ikke😬</h2>
+        <button id="btn_gameover" class="pulse">Prøv igen</button>
       </div>
-      <div id="level_complete" class="hidden" class="glow">
+      <div id="level_complete" class="hidden glow">
         <h2>Yessir! Du klarede den😈</h2>
+        <button id="btn_genstart" class="pulse">Genstart</button>
       </div>
     </div>
 
-
-<audio id="sound_ball" src="sound/soccer-kick-6235.mp3"></audio>
-<audio id="sound_bomb" src="sound/8bit_bomb_explosion.wav"></audio>
-<audio id="sound_golden" src="sound/ball.sideborder.wav"></audio>
-<audio id="sound_thunder" src="sound/rock_breaking.flac"></audio>
-<audio id="lost_game" src="sound/080205_life-lost-game-over-89697.mp3"></audio>
-<audio id="level_done" src="sound/All The Way Up Clip.mp3"></audio>
-<audio id="start_level" src="sound/short-success-sound-glockenspiel-treasure-video-game-6346.mp3"></audio>
-<audio id="ingame_sound" src="sound/Arcade Game Music Type Beat (RDCworld1 Outro).mp3"></audio>
-
-
-
+    <audio id="sound_ball" src="sound/soccer-kick-6235.mp3"></audio>
+    <audio id="sound_bomb" src="sound/8bit_bomb_explosion.wav"></audio>
+    <audio id="sound_golden" src="sound/ball.sideborder.wav"></audio>
+    <audio id="sound_thunder" src="sound/rock_breaking.flac"></audio>
+    <audio id="lost_game" src="sound/080205_life-lost-game-over-89697.mp3"></audio>
+    <audio id="level_done" src="sound/All The Way Up Clip.mp3"></audio>
+    <audio id="start_level" src="sound/short-success-sound-glockenspiel-treasure-video-game-6346.mp3"></audio>
+    <audio id="ingame_sound" src="sound/Arcade Game Music Type Beat (RDCworld1 Outro).mp3"></audio>
 
     <script src="app.js"></script>
-  
-</body>
+  </body>
 </html>
