@@ -3,7 +3,7 @@
 window.addEventListener("load", start);
 let points = 0;
 let lives = 0;
-
+// let isGameRunning = false;
 function start() {
   console.log("Keepy ups!");
   document.querySelector("#btn_start").addEventListener("click", startGame);
@@ -12,7 +12,6 @@ function start() {
 }
 
 function showGameScreen() {
-  console.log("test");
   document.querySelector("#start").classList.add("hidden");
   document.querySelector("#game_over").classList.add("hidden");
   document.querySelector("#level_complete").classList.add("hidden");
@@ -25,22 +24,8 @@ function showStartScreen() {
   document.querySelector("#level_complete").classList.add("hidden");
 }
 
-function resetLives() {
-  lives = 3;
-  document.querySelector("#health1").classList.remove("broken_heart");
-  document.querySelector("#health2").classList.remove("broken_heart");
-  document.querySelector("#health3").classList.remove("broken_heart");
-  document.querySelector("#health1").classList.add("full_heart");
-  document.querySelector("#health2").classList.add("full_heart");
-  document.querySelector("#health3").classList.add("full_heart");
-}
-
-function resetPoints() {
-  points = 0;
-
-  displayPoints();
-}
 function startGame() {
+  // isGameRunning = true;
   resetLives();
   resetPoints();
   showGameScreen();
@@ -63,6 +48,49 @@ function startGame() {
 
   document.querySelector("#lightning2_container").addEventListener("click", clickLightning);
 }
+function resetLives() {
+  lives = 3;
+  document.querySelector("#health1").classList.remove("broken_heart");
+  document.querySelector("#health2").classList.remove("broken_heart");
+  document.querySelector("#health3").classList.remove("broken_heart");
+  document.querySelector("#health1").classList.add("full_heart");
+  document.querySelector("#health2").classList.add("full_heart");
+  document.querySelector("#health3").classList.add("full_heart");
+}
+
+function resetPoints() {
+  points = 0;
+
+  displayPoints();
+}
+
+function sidenLoades() {
+  console.log("sidenLoades");
+  document.querySelector("#time_container").addEventListener("click", startSpillet);
+}
+
+function startSpillet() {
+  console.log("startSpillet - timeren er begyndt");
+
+  document.querySelector("#time_container").removeEventListener("click", startSpillet);
+  document.querySelector("#time_sprite").classList.add("#shrink");
+  document.querySelector("#time_sprite").addEventListener("animationed", stopSpillet);
+}
+
+function stopSpillet() {
+  console.log("stopSpillet - timeren er færdig");
+  document.querySelector("#time_sprite").addEventListener("animationed", stopSpillet);
+  document.querySelector("#time_sprite").classList.remove("shrink");
+  document.querySelector("#time_container").addEventListener("click", startSpillet);
+}
+
+// function startTimer() {
+//   document.querySelector("#time_sprite").classList.remove("shrink");
+//   document.querySelector("#time_sprite").offsetWidth;
+//   document.querySelector("#time_sprite").classList.add("shrink");
+
+//   document.querySelector("#time_sprite").addEventListener("animationend", timeIsUp);
+// }
 
 function clickBall() {
   console.log("clickBall");
@@ -172,7 +200,10 @@ function clickLightning() {
 
   document.querySelector("#lightning2_container").addEventListener("animationend", lightningGone);
 
-  decrementPoints();
+  decrementedLives();
+  decrementedLives();
+  decrementedLives();
+
   document.querySelector("#sound_thunder").currentTime = 0;
 
   document.querySelector("#sound_thunder").play();
@@ -189,8 +220,7 @@ function lightningGone() {
   document.querySelector("#lightning2_container").offsetWidth;
   document.querySelector("#lightning2_container").classList.add("falling4");
 
-  document.querySelector("#lightning2_container").addEventListener("click", lightningGone);
-  gameOver();
+  document.querySelector("#lightning2_container").addEventListener("click", clickLightning);
 }
 
 function incrementPoints() {
@@ -242,6 +272,16 @@ function showIncrementedLives() {
   document.querySelector("#health" + lives).classList.add("full_heart");
 }
 
+function timerSlut() {
+  console.log("Timeren er slut!");
+
+  if (points > 10) {
+    levelComplete();
+  } else {
+    gameOver();
+  }
+}
+
 function gameOver() {
   console.log("Game Over");
   document.querySelector("#game_over").classList.remove("hidden");
@@ -256,6 +296,7 @@ function levelComplete() {
 }
 
 function stopGame() {
+  // isGameRunning = false;
   document.querySelector("#ingame_sound").pause();
   document.querySelector("#football1_container").classList.remove("falling1");
   document.querySelector("#golden1_container").classList.remove("falling2");

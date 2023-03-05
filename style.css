@@ -129,6 +129,23 @@ img {
   grid-template-columns: 1.2em 1.2em 1.2em;
 }
 
+#time_container {
+  position: absolute;
+  width: 3%;
+  aspect-ratio: 6/30;
+  border: 2px solid black;
+  background-color: 208, 204, 204, 0.383;
+  top: 300%;
+  left: 93%;
+}
+#time_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: limegreen;
+  transform-origin: 50% 100%;
+}
+
 #life_board img {
   width: 5%;
 }

@@ -140,3 +140,25 @@
     filter: drop-shadow(0 0 20px yellow);
   }
 }
+
+.shrink {
+  animation-name: shrink_kf;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink_kf {
+  0% {
+    scale: 1 1;
+    background-color: limegreen;
+  }
+  50% {
+    background-color: rgb(255, 230, 0);
+  }
+  100% {
+    scale: 1 0;
+    background-color: red;
+  }
+}
