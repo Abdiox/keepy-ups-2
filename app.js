@@ -82,7 +82,7 @@ function startTimer() {
 
   document.querySelector("#time_sprite").addEventListener("animationend", timerSlut);
 }
-
+//Positive ting man kan klikke på
 function clickBall() {
   console.log("clickBall");
   let football = this;
@@ -152,7 +152,7 @@ function goldenGone() {
   goldenBall.addEventListener("click", clickGolden);
 }
 
-//Negative ting som man kan trykke på
+//Negative ting som man kan klikke på
 function clickBomb() {
   console.log("clickBomb");
   let kugle = this;
@@ -160,7 +160,7 @@ function clickBomb() {
 
   kugle.classList.add("paused");
 
-  kugle.querySelector("img").classList.add("zoom_out");
+  kugle.querySelector("img").classList.add("zoom_in");
 
   kugle.addEventListener("animationend", bombGone);
 
@@ -172,7 +172,7 @@ function bombGone() {
   let kugle = this;
   kugle.removeEventListener("animationed", bombGone);
 
-  kugle.querySelector("img").classList.remove("zoom_out");
+  kugle.querySelector("img").classList.remove("zoom_in");
 
   kugle.classList.remove("paused");
 
@@ -199,7 +199,7 @@ function clickLightning() {
 
   lightning.classList.add("paused");
 
-  lightning.querySelector("img").classList.add("zoom_out");
+  lightning.querySelector("img").classList.add("zoom_in");
 
   lightning.addEventListener("animationend", lightningGone);
 
@@ -216,7 +216,7 @@ function lightningGone() {
   let lightning = this;
   lightning.removeEventListener("animationend", lightningGone);
 
-  lightning.querySelector("img").classList.remove("zoom_out");
+  lightning.querySelector("img").classList.remove("zoom_in");
 
   lightning.classList.remove("paused");
 
