@@ -131,9 +131,8 @@ function clickGolden() {
   incrementMorePoints();
   incrementedLives();
 
-  if (lives < 3) {
-    incrementLives();
-  }
+  // if (lives < 3) {
+  // }
   document.querySelector("#sound_golden").play();
 }
 
@@ -232,7 +231,7 @@ function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
-  if (points >= 10) {
+  if (points >= 30) {
     levelComplete();
   }
 }
@@ -248,7 +247,7 @@ function incrementMorePoints() {
 function displayMorePoints() {
   document.querySelector("#ball_count").textContent = points;
 }
-
+//Ting som skal tage liv
 function decrementPoints() {
   console.log("decrementPoints");
   points--;
@@ -268,7 +267,7 @@ function decrementedLives() {
   }
   showDecrementedLives();
 }
-
+//Ting som skal give liv
 function incrementedLives() {
   console.log("incrementLives");
   lives++;
@@ -305,7 +304,6 @@ function levelComplete() {
   console.log("Level Complete");
   document.querySelector("#level_complete").classList.remove("hidden");
   document.querySelector("#level_done").play();
-  document.querySelector("#level_done").currentTime = 0;
   stopGame();
 }
 
