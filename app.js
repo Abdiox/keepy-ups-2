@@ -85,14 +85,15 @@ function startTimer() {
 
 function clickBall() {
   console.log("clickBall");
+  let football = this;
 
-  document.querySelector("#football1_container").removeEventListener("click", clickBall);
+  football.removeEventListener("click", clickBall);
 
-  document.querySelector("#football1_container").classList.add("paused");
+  football.classList.add("paused");
 
-  document.querySelector("#football1_sprite").classList.add("zoom_out");
+  football.querySelector("img").classList.add("zoom_out");
 
-  document.querySelector("#football1_container").addEventListener("animationend", ballGone);
+  football.addEventListener("animationend", ballGone);
 
   document.querySelector("#sound_ball").currentTime = 0;
 
@@ -102,28 +103,30 @@ function clickBall() {
 }
 
 function ballGone() {
-  document.querySelector("#football1_container").removeEventListener("animationend", ballGone);
+  let football = this;
+  football.removeEventListener("animationend", ballGone);
 
-  document.querySelector("#football1_sprite").classList.remove("zoom_out");
+  football.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#football1_container").classList.remove("paused");
+  football.classList.remove("paused");
 
-  document.querySelector("#football1_container").classList.remove("falling1");
-  document.querySelector("#football1_container").offsetWidth;
-  document.querySelector("#football1_container").classList.add("falling1");
+  football.classList.remove("falling1");
+  football.offsetWidth;
+  football.classList.add("falling1");
 
-  document.querySelector("#football1_container").addEventListener("click", clickBall);
+  football.addEventListener("click", clickBall);
 }
 
 function clickGolden() {
   console.log("clickGolden");
-  document.querySelector("#golden1_container").removeEventListener("click", clickGolden);
+  let goldenBall = this;
+  goldenBall.removeEventListener("click", clickGolden);
 
-  document.querySelector("#golden1_container").classList.add("paused");
+  goldenBall.classList.add("paused");
 
-  document.querySelector("#golden1_sprite").classList.add("zoom_out");
+  goldenBall.querySelector("img").classList.add("zoom_out");
 
-  document.querySelector("#golden1_container").addEventListener("animationend", goldenGone);
+  goldenBall.addEventListener("animationend", goldenGone);
 
   incrementMorePoints();
   incrementedLives();
@@ -135,61 +138,74 @@ function clickGolden() {
 }
 
 function goldenGone() {
-  document.querySelector("#golden1_container").removeEventListener("animationed", goldenGone);
+  let goldenBall = this;
+  goldenBall.removeEventListener("animationed", goldenGone);
 
-  document.querySelector("#golden1_sprite").classList.remove("zoom_out");
+  goldenBall.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#golden1_container").classList.remove("paused");
+  goldenBall.classList.remove("paused");
 
-  document.querySelector("#golden1_container").classList.remove("falling2");
-  document.querySelector("#golden1_container").offsetWidth;
-  document.querySelector("#golden1_container").classList.add("falling2");
+  goldenBall.classList.remove("falling2");
+  goldenBall.offsetWidth;
+  goldenBall.classList.add("falling2");
 
-  document.querySelector("#golden1_container").addEventListener("click", clickGolden);
+  goldenBall.addEventListener("click", clickGolden);
 }
+
+//Negative ting som man kan trykke på
 function clickBomb() {
   console.log("clickBomb");
-  document.querySelector("#bomb1_container").removeEventListener("click", clickBomb);
+  let kugle = this;
+  kugle.removeEventListener("click", clickBomb);
 
-  document.querySelector("#bomb1_container").classList.add("paused");
+  kugle.classList.add("paused");
 
-  document.querySelector("#bomb1_sprite").classList.add("zoom_in");
+  kugle.querySelector("img").classList.add("zoom_out");
 
-  document.querySelector("#bomb1_container").addEventListener("animationend", bombGone);
+  kugle.addEventListener("animationend", bombGone);
 
   decrementedLives();
   document.querySelector("#sound_bomb").play();
 }
 
 function bombGone() {
-  document.querySelector("#bomb1_container").removeEventListener("animationed", bombGone);
+  let kugle = this;
+  kugle.removeEventListener("animationed", bombGone);
 
-  document.querySelector("#bomb1_sprite").classList.remove("zoom_in");
+  kugle.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#bomb1_container").classList.remove("paused");
+  kugle.classList.remove("paused");
 
-  document.querySelector("#bomb1_container").classList.remove("falling3");
-  document.querySelector("#bomb1_container").offsetWidth;
-  document.querySelector("#bomb1_container").classList.add("falling3");
+  kugle.classList.remove("falling3");
+  kugle.offsetWidth;
+  kugle.classList.add("falling3");
 
-  document.querySelector("#bomb1_container").addEventListener("click", clickBomb);
+  kugle.addEventListener("click", clickBomb);
   decrementPoints();
 }
+// function bombRestart() {
+//   let kugle = this;
+//   kugle.classList.remove("zoom_in");
+//   kugle.offsetWidth;
+//   kugle.classList.add("zoom_in");
+// }
 
 function clickLightning() {
   console.log("clickLightning");
+  let lightning = this;
+  //tilbae til start!
 
-  document.querySelector("#lightning2_container").removeEventListener("click", clickLightning);
+  lightning.removeEventListener("click", clickLightning);
 
-  document.querySelector("#lightning2_container").classList.add("paused");
+  lightning.classList.add("paused");
 
-  document.querySelector("#ligtning2_sprite").classList.add("zoom_in");
+  lightning.querySelector("img").classList.add("zoom_out");
 
-  document.querySelector("#lightning2_container").addEventListener("animationend", lightningGone);
+  lightning.addEventListener("animationend", lightningGone);
 
   decrementedLives();
-  // decrementedLives();
-  // decrementedLives();
+  decrementedLives();
+  decrementedLives();
 
   document.querySelector("#sound_thunder").currentTime = 0;
 
@@ -197,17 +213,18 @@ function clickLightning() {
 }
 
 function lightningGone() {
-  document.querySelector("#lightning2_container").removeEventListener("animationend", lightningGone);
+  let lightning = this;
+  lightning.removeEventListener("animationend", lightningGone);
 
-  document.querySelector("#ligtning2_sprite").classList.remove("zoom_out");
+  lightning.querySelector("img").classList.remove("zoom_out");
 
-  document.querySelector("#lightning2_container").classList.remove("paused");
+  lightning.classList.remove("paused");
 
-  document.querySelector("#lightning2_container").classList.remove("falling4");
-  document.querySelector("#lightning2_container").offsetWidth;
-  document.querySelector("#lightning2_container").classList.add("falling4");
+  lightning.classList.remove("falling4");
+  lightning.offsetWidth;
+  lightning.classList.add("falling4");
 
-  document.querySelector("#lightning2_container").addEventListener("click", clickLightning);
+  lightning.addEventListener("click", clickLightning);
 }
 
 //Ting som skal give 1 point
