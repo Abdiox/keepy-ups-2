@@ -11,35 +11,26 @@ function start() {
   document.querySelector("#btn_genstart").addEventListener("click", showStartScreen);
 }
 
-function showGameScreen() {
-  document.querySelector("#start").classList.add("hidden");
-  document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#level_complete").classList.add("hidden");
-}
-
-function showStartScreen() {
-  console.log("vis startSceen");
-  document.querySelector("#start").classList.remove("hidden");
-  document.querySelector("#game_over").classList.add("hidden");
-  document.querySelector("#level_complete").classList.add("hidden");
-}
-
 function startGame() {
   // isGameRunning = true;
+  points = 0;
+  lives = 3;
   resetLives();
   resetPoints();
   showGameScreen();
   console.log("startGame");
   document.querySelector("#ingame_sound").play();
+  document.querySelector("#ingame_sound").volume = 0.3;
+  document.querySelector("#ingame_sound").currentTime = 0;
 
   document.querySelector("#start").classList.add("hidden");
   document.querySelector("#start_level").play();
 
-  document.querySelector("#football1_container").classList.add("falling1");
-  document.querySelector("#golden1_container").classList.add("falling2");
-  document.querySelector("#bomb1_container").classList.add("falling3");
-  document.querySelector("#lightning2_container").classList.add("falling4");
-
+  registrerKlik();
+  startAnimationer();
+  startTimer();
+}
+function registrerKlik() {
   document.querySelector("#football1_container").addEventListener("click", clickBall);
 
   document.querySelector("#golden1_container").addEventListener("click", clickGolden);
@@ -48,6 +39,14 @@ function startGame() {
 
   document.querySelector("#lightning2_container").addEventListener("click", clickLightning);
 }
+
+function startAnimationer() {
+  document.querySelector("#football1_container").classList.add("falling1");
+  document.querySelector("#golden1_container").classList.add("falling2");
+  document.querySelector("#bomb1_container").classList.add("falling3");
+  document.querySelector("#lightning2_container").classList.add("falling4");
+}
+
 function resetLives() {
   lives = 3;
   document.querySelector("#health1").classList.remove("broken_heart");
@@ -63,34 +62,46 @@ function resetPoints() {
 
   displayPoints();
 }
-
-function sidenLoades() {
-  console.log("sidenLoades");
-  document.querySelector("#time_container").addEventListener("click", startSpillet);
+function showGameScreen() {
+  document.querySelector("#start").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
 }
 
-function startSpillet() {
-  console.log("startSpillet - timeren er begyndt");
-
-  document.querySelector("#time_container").removeEventListener("click", startSpillet);
-  document.querySelector("#time_sprite").classList.add("#shrink");
-  document.querySelector("#time_sprite").addEventListener("animationed", stopSpillet);
+function showStartScreen() {
+  console.log("vis startSceen");
+  document.querySelector("#start").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
 }
 
-function stopSpillet() {
-  console.log("stopSpillet - timeren er færdig");
-  document.querySelector("#time_sprite").addEventListener("animationed", stopSpillet);
-  document.querySelector("#time_sprite").classList.remove("shrink");
-  document.querySelector("#time_container").addEventListener("click", startSpillet);
-}
-
-// function startTimer() {
-//   document.querySelector("#time_sprite").classList.remove("shrink");
-//   document.querySelector("#time_sprite").offsetWidth;
-//   document.querySelector("#time_sprite").classList.add("shrink");
-
-//   document.querySelector("#time_sprite").addEventListener("animationend", timeIsUp);
+// function sidenLoades() {
+//   console.log("sidenLoades");
+//   document.querySelector("#time_container").addEventListener("click", startSpillet);
 // }
+
+// function startSpillet() {
+//   console.log("startSpillet - timeren er begyndt");
+
+//   document.querySelector("#time_container").removeEventListener("click", startSpillet);
+//   document.querySelector("#time_sprite").classList.add("#shrink");
+//   document.querySelector("#time_sprite").addEventListener("animationed", stopSpillet);
+// }
+
+// function stopSpillet() {
+//   console.log("stopSpillet - timeren er færdig");
+//   document.querySelector("#time_sprite").addEventListener("animationed", stopSpillet);
+//   document.querySelector("#time_sprite").classList.remove("shrink");
+//   document.querySelector("#time_container").addEventListener("click", startSpillet);
+// }
+
+function startTimer() {
+  document.querySelector("#time_sprite").classList.remove("shrink");
+  document.querySelector("#time_sprite").offsetWidth;
+  document.querySelector("#time_sprite").classList.add("shrink");
+
+  document.querySelector("#time_sprite").addEventListener("animationend", timerSlut);
+}
 
 function clickBall() {
   console.log("clickBall");
