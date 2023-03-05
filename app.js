@@ -75,26 +75,6 @@ function showStartScreen() {
   document.querySelector("#level_complete").classList.add("hidden");
 }
 
-// function sidenLoades() {
-//   console.log("sidenLoades");
-//   document.querySelector("#time_container").addEventListener("click", startSpillet);
-// }
-
-// function startSpillet() {
-//   console.log("startSpillet - timeren er begyndt");
-
-//   document.querySelector("#time_container").removeEventListener("click", startSpillet);
-//   document.querySelector("#time_sprite").classList.add("#shrink");
-//   document.querySelector("#time_sprite").addEventListener("animationed", stopSpillet);
-// }
-
-// function stopSpillet() {
-//   console.log("stopSpillet - timeren er færdig");
-//   document.querySelector("#time_sprite").addEventListener("animationed", stopSpillet);
-//   document.querySelector("#time_sprite").classList.remove("shrink");
-//   document.querySelector("#time_container").addEventListener("click", startSpillet);
-// }
-
 function startTimer() {
   document.querySelector("#time_sprite").classList.remove("shrink");
   document.querySelector("#time_sprite").offsetWidth;
@@ -145,11 +125,7 @@ function clickGolden() {
 
   document.querySelector("#golden1_container").addEventListener("animationend", goldenGone);
 
-  incrementPoints();
-  incrementPoints();
-  incrementPoints();
-  incrementPoints();
-
+  incrementMorePoints();
   incrementedLives();
 
   if (lives < 3) {
@@ -212,8 +188,8 @@ function clickLightning() {
   document.querySelector("#lightning2_container").addEventListener("animationend", lightningGone);
 
   decrementedLives();
-  decrementedLives();
-  decrementedLives();
+  // decrementedLives();
+  // decrementedLives();
 
   document.querySelector("#sound_thunder").currentTime = 0;
 
@@ -234,6 +210,7 @@ function lightningGone() {
   document.querySelector("#lightning2_container").addEventListener("click", clickLightning);
 }
 
+//Ting som skal give 1 point
 function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
@@ -242,8 +219,16 @@ function incrementPoints() {
     levelComplete();
   }
 }
-
 function displayPoints() {
+  document.querySelector("#ball_count").textContent = points;
+}
+//ting som skal give 4 point
+function incrementMorePoints() {
+  console.log("IncrementMorePoints");
+  points += 4;
+  displayMorePoints();
+}
+function displayMorePoints() {
   document.querySelector("#ball_count").textContent = points;
 }
 
@@ -303,6 +288,7 @@ function levelComplete() {
   console.log("Level Complete");
   document.querySelector("#level_complete").classList.remove("hidden");
   document.querySelector("#level_done").play();
+  document.querySelector("#level_done").currentTime = 0;
   stopGame();
 }
 
