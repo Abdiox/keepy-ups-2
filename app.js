@@ -32,6 +32,8 @@ function startGame() {
 }
 function registrerKlik() {
   document.querySelector("#football1_container").addEventListener("click", clickBall);
+  document.querySelector("#football2_container").addEventListener("click", clickBall);
+  document.querySelector("#football3_container").addEventListener("click", clickBall);
 
   document.querySelector("#golden1_container").addEventListener("click", clickGolden);
 
@@ -41,10 +43,21 @@ function registrerKlik() {
 }
 
 function startAnimationer() {
+  //Animationerne starter og falder ned
   document.querySelector("#football1_container").classList.add("falling1");
+  document.querySelector("#football2_container").classList.add("falling1");
+  document.querySelector("#football3_container").classList.add("falling1");
   document.querySelector("#golden1_container").classList.add("falling2");
   document.querySelector("#bomb1_container").classList.add("falling3");
   document.querySelector("#lightning2_container").classList.add("falling4");
+  //start speed animationer
+  document.querySelector("#football1_container").classList.add("speed1");
+  document.querySelector("#football2_container").classList.add("speed2");
+  document.querySelector("#football3_container").classList.add("speed3");
+  document.querySelector("#golden1_container").classList.add("speed4");
+  document.querySelector("#bomb1_container").classList.add("speed5");
+  document.querySelector("#lightning2_container").classList.add("speed6");
+  //start position animationerne
 }
 
 function resetLives() {
@@ -115,6 +128,26 @@ function ballGone() {
   football.classList.add("falling1");
 
   football.addEventListener("click", clickBall);
+}
+
+function animationRepeat() {
+  console.log("repeat");
+  document.querySelector("#football1_container").addEventListener("animationed", fotballsRestart);
+  document.querySelector("#football2_container").addEventListener("animationed", fotballsRestart);
+  document.querySelector("#football3_container").addEventListener("animationed", fotballsRestart);
+}
+
+function fotballsRestart() {
+  console.log("fotballsRestart");
+
+  let balls = this;
+  balls.classList.remove("falling1");
+  balls.offsetWidth;
+  balls.classList.add("falling1");
+
+  football.classList.remove("speed1", "speed2", "speed3", "speed4", "speed5", "speed6");
+  let speed = Math.floor(Math.random() * 6) + 1;
+  football.classList.add("speed" + speed);
 }
 
 function clickGolden() {
@@ -231,7 +264,7 @@ function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
-  if (points >= 30) {
+  if (points >= 25) {
     levelComplete();
   }
 }
@@ -270,7 +303,10 @@ function decrementedLives() {
 //Ting som skal give liv
 function incrementedLives() {
   console.log("incrementLives");
-  lives++;
+  if (lives >= 3) {
+    lives;
+  } else lives++;
+
   showIncrementedLives();
 }
 
@@ -284,10 +320,13 @@ function showIncrementedLives() {
   document.querySelector("#health" + lives).classList.add("full_heart");
 }
 
+//Sltuning af spillet
+
+//Hvis du ikke har mere end 30 point når gamet er slut har du tabt
 function timerSlut() {
   console.log("Timeren er slut!");
 
-  if (points > 10) {
+  if (points > 25) {
     levelComplete();
   } else {
     gameOver();

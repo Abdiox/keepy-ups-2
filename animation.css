@@ -81,7 +81,7 @@
 
 .zoom_in {
   animation-name: zoom_in;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -143,7 +143,7 @@
 
 .shrink {
   animation-name: shrink_kf;
-  animation-duration: 10s;
+  animation-duration: 20s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -161,4 +161,23 @@
     scale: 1 0;
     background-color: red;
   }
+}
+
+.speed1 {
+  animation-duration: 3s;
+}
+.speed2 {
+  animation-duration: 2.5s;
+}
+.speed3 {
+  animation-duration: 1.5s;
+}
+.speed4 {
+  animation-duration: 4s;
+}
+.speed5 {
+  animation-duration: 5s;
+}
+.speed6 {
+  animation-duration: 3.5s;
 }

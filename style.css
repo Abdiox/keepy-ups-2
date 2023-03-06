@@ -80,6 +80,18 @@ img {
   top: 35%;
   left: 50%;
 }
+#football2_sprite {
+  width: 10%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+}
+#football3_sprite {
+  width: 10%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+}
 
 #golden1_sprite {
   width: 7%;
