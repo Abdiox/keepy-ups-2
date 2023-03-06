@@ -38,6 +38,7 @@ function registrerKlik() {
   document.querySelector("#golden1_container").addEventListener("click", clickGolden);
 
   document.querySelector("#bomb1_container").addEventListener("click", clickBomb);
+  document.querySelector("#bomb2_container").addEventListener("click", clickBomb);
 
   document.querySelector("#lightning2_container").addEventListener("click", clickLightning);
 }
@@ -135,6 +136,8 @@ function animationRepeat() {
   document.querySelector("#football1_container").addEventListener("animationed", fotballsRestart);
   document.querySelector("#football2_container").addEventListener("animationed", fotballsRestart);
   document.querySelector("#football3_container").addEventListener("animationed", fotballsRestart);
+  // document.querySelector("#bomb1_container").addEventListener("animationed", bombRestart);
+  // document.querySelector("#bomb2_container").addEventListener("animationed", bombRestart);
 }
 
 function fotballsRestart() {
@@ -215,6 +218,18 @@ function bombGone() {
   kugle.addEventListener("click", clickBomb);
   decrementPoints();
 }
+// function bombRestart() {
+//   console.log("bombRestart");
+
+//   let bombs = this;
+//   bombs.classList.remove("falling3");
+//   bombs.offsetWidth;
+//   bombs.classList.add("falling3");
+
+//   bombs.classList.remove("speed5", "speed6");
+//   let speed = Math.floor(Math.random() * 2) + 1;
+//   bombs.classList.add("speed" + speed);
+// }
 
 function clickLightning() {
   console.log("clickLightning");
@@ -258,7 +273,7 @@ function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
-  if (points >= 30) {
+  if (points >= 25) {
     levelComplete();
   }
 }
@@ -268,7 +283,7 @@ function displayPoints() {
 //ting som skal give 4 point
 function incrementMorePoints() {
   console.log("IncrementMorePoints");
-  points += 4;
+  points += 3;
   displayMorePoints();
 }
 function displayMorePoints() {
@@ -320,7 +335,7 @@ function showIncrementedLives() {
 function timerSlut() {
   console.log("Timeren er slut!");
 
-  if (points > 30) {
+  if (points > 25) {
     levelComplete();
   } else {
     gameOver();

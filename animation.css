@@ -16,7 +16,7 @@
 }
 .falling2 {
   animation-name: falling;
-  animation-duration: 1s;
+  animation-duration: s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -32,7 +32,7 @@
 }
 .falling3 {
   animation-name: falling;
-  animation-duration: 10s;
+  animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -49,6 +49,22 @@
 .falling4 {
   animation-name: falling;
   animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(0, -100%);
+  }
+
+  100% {
+    transform: translate(0, 56.25vw);
+  }
+}
+.falling5 {
+  animation-name: falling;
+  animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }

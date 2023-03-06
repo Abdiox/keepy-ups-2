@@ -140,6 +140,12 @@ img {
   top: 12%;
   left: 50.9%;
 }
+#bomb2_sprite {
+  width: 9.5%;
+  position: absolute;
+  top: 12%;
+  left: 50.9%;
+}
 #ligtning2_sprite {
   width: 4%;
   position: absolute;
