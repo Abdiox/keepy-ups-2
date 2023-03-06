@@ -46,6 +46,7 @@ img {
   position: relative;
   overflow: hidden;
 }
+/*Off screen elements*/
 .hidden,
 #game_over.hidden,
 #level_complete.hidden,
@@ -62,6 +63,7 @@ img {
   background-image: linear-gradient(160deg, #c90303 0%, black 80%);
   color: #ffffff;
 }
+/*Start screen & level complete*/
 
 #level_complete,
 #start {
@@ -73,6 +75,7 @@ img {
   background-image: linear-gradient(170deg, blue 0%, red 100%);
   color: #ffffff;
 }
+/*Game elements*/
 
 #football1_sprite {
   width: 10%;
@@ -94,10 +97,10 @@ img {
 }
 
 #golden1_sprite {
-  width: 7%;
+  width: 10%;
   position: absolute;
   top: 25%;
-  left: 51%;
+  left: 50%;
 }
 #bomb1_sprite {
   width: 9.5%;
@@ -111,6 +114,7 @@ img {
   top: 0.02%;
   left: 53.5%;
 }
+/*GAME UI*/
 
 #game_ui {
   position: relative;
@@ -180,6 +184,24 @@ img {
   left: 92%;
 }
 
+#dead_boy {
+  width: 40%;
+  position: absolute;
+  top: 30%;
+  left: 1%;
+}
+#happy_boy {
+  width: 35%;
+  position: absolute;
+  top: 48%;
+  left: 10%;
+}
+#golden_ball {
+  width: 12%;
+  position: absolute;
+  top: 75%;
+  left: 21%;
+}
 .ball_image {
   filter: drop-shadow(0 0 10px blue);
 }
