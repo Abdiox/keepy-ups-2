@@ -101,8 +101,13 @@ img {
   left: 22%;
   rotate: 240deg;
 }
-
-/*Game elements*/
+#lightning {
+  width: 20%;
+  position: absolute;
+  top: 40%;
+  left: 0.5%;
+  rotate: 130deg;
+}
 
 #football1_sprite {
   width: 10%;

@@ -264,7 +264,7 @@ function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
-  if (points >= 10) {
+  if (points >= 25) {
     levelComplete();
   }
 }
