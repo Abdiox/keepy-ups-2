@@ -215,12 +215,6 @@ function bombGone() {
   kugle.addEventListener("click", clickBomb);
   decrementPoints();
 }
-// function bombRestart() {
-//   let kugle = this;
-//   kugle.classList.remove("zoom_in");
-//   kugle.offsetWidth;
-//   kugle.classList.add("zoom_in");
-// }
 
 function clickLightning() {
   console.log("clickLightning");
@@ -264,7 +258,7 @@ function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
-  if (points >= 25) {
+  if (points >= 30) {
     levelComplete();
   }
 }
@@ -326,7 +320,7 @@ function showIncrementedLives() {
 function timerSlut() {
   console.log("Timeren er slut!");
 
-  if (points > 25) {
+  if (points > 30) {
     levelComplete();
   } else {
     gameOver();
@@ -348,17 +342,22 @@ function levelComplete() {
 
 function stopGame() {
   // isGameRunning = false;
+  //Fjern animationer
   document.querySelector("#ingame_sound").pause();
   document.querySelector("#football1_container").classList.remove("falling1");
   document.querySelector("#golden1_container").classList.remove("falling2");
   document.querySelector("#bomb1_container").classList.remove("falling3");
   document.querySelector("#lightning2_container").classList.remove("falling4");
 
+  //fjern klik
   document.querySelector("#football1_container").removeEventListener("click", clickBall);
-
+  document.querySelector("#football2_container").removeEventListener("click", clickBall);
+  document.querySelector("#football3_container").removeEventListener("click", clickBall);
   document.querySelector("#golden1_container").removeEventListener("click", clickGolden);
-
   document.querySelector("#bomb1_container").removeEventListener("click", clickBomb);
-
   document.querySelector("#lightning2_container").removeEventListener("click", clickLightning);
+
+  //Fjern baggrundsmusik & lyde
+  // document.querySelector("#level_done").pause();
+  // document.querySelector("#level_done").currentTime = 0;
 }
