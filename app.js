@@ -6,9 +6,9 @@ let lives = 0;
 // let isGameRunning = false;
 function start() {
   console.log("Keepy ups!");
-  document.querySelector("#btn_start").addEventListener("click", startGame);
-  document.querySelector("#btn_gameover").addEventListener("click", startGame);
-  document.querySelector("#btn_genstart").addEventListener("click", showStartScreen);
+  document.querySelector("#btn_start").addEventListener("mousedown", startGame);
+  document.querySelector("#btn_gameover").addEventListener("mousedown", startGame);
+  document.querySelector("#btn_genstart").addEventListener("mousedown", showStartScreen);
 }
 
 function startGame() {
@@ -31,16 +31,16 @@ function startGame() {
   startTimer();
 }
 function registrerKlik() {
-  document.querySelector("#football1_container").addEventListener("click", clickBall);
-  document.querySelector("#football2_container").addEventListener("click", clickBall);
-  document.querySelector("#football3_container").addEventListener("click", clickBall);
+  document.querySelector("#football1_container").addEventListener("mousedown", clickBall);
+  document.querySelector("#football2_container").addEventListener("mousedown", clickBall);
+  document.querySelector("#football3_container").addEventListener("mousedown", clickBall);
 
-  document.querySelector("#golden1_container").addEventListener("click", clickGolden);
+  document.querySelector("#golden1_container").addEventListener("mousedown", clickGolden);
 
-  document.querySelector("#bomb1_container").addEventListener("click", clickBomb);
-  document.querySelector("#bomb2_container").addEventListener("click", clickBomb);
+  document.querySelector("#bomb1_container").addEventListener("mousedown", clickBomb);
+  document.querySelector("#bomb2_container").addEventListener("mousedown", clickBomb);
 
-  document.querySelector("#lightning2_container").addEventListener("click", clickLightning);
+  document.querySelector("#lightning2_container").addEventListener("mousedown", clickLightning);
 }
 
 function startAnimationer() {
@@ -101,7 +101,7 @@ function clickBall() {
   console.log("clickBall");
   let football = this;
 
-  football.removeEventListener("click", clickBall);
+  football.removeEventListener("mousedown", clickBall);
 
   football.classList.add("paused");
 
@@ -128,7 +128,7 @@ function ballGone() {
   football.offsetWidth;
   football.classList.add("falling1");
 
-  football.addEventListener("click", clickBall);
+  football.addEventListener("mousedown", clickBall);
 }
 
 function animationRepeat() {
@@ -156,7 +156,7 @@ function fotballsRestart() {
 function clickGolden() {
   console.log("clickGolden");
   let goldenBall = this;
-  goldenBall.removeEventListener("click", clickGolden);
+  goldenBall.removeEventListener("mousedown", clickGolden);
 
   goldenBall.classList.add("paused");
 
@@ -184,14 +184,14 @@ function goldenGone() {
   goldenBall.offsetWidth;
   goldenBall.classList.add("falling2");
 
-  goldenBall.addEventListener("click", clickGolden);
+  goldenBall.addEventListener("mousedown", clickGolden);
 }
 
 //Negative ting som man kan klikke på
 function clickBomb() {
   console.log("clickBomb");
   let kugle = this;
-  kugle.removeEventListener("click", clickBomb);
+  kugle.removeEventListener("mousedown", clickBomb);
 
   kugle.classList.add("paused");
 
@@ -215,7 +215,7 @@ function bombGone() {
   kugle.offsetWidth;
   kugle.classList.add("falling3");
 
-  kugle.addEventListener("click", clickBomb);
+  kugle.addEventListener("mousedown", clickBomb);
   decrementPoints();
 }
 // function bombRestart() {
@@ -236,7 +236,7 @@ function clickLightning() {
   let lightning = this;
   //tilbae til start!
 
-  lightning.removeEventListener("click", clickLightning);
+  lightning.removeEventListener("mousedown", clickLightning);
 
   lightning.classList.add("paused");
 
@@ -265,7 +265,7 @@ function lightningGone() {
   lightning.offsetWidth;
   lightning.classList.add("falling4");
 
-  lightning.addEventListener("click", clickLightning);
+  lightning.addEventListener("mousedown", clickLightning);
 }
 
 //Ting som skal give 1 point
@@ -273,7 +273,7 @@ function incrementPoints() {
   console.log("incrementPoints");
   points = points + 1;
   displayPoints();
-  if (points >= 25) {
+  if (points >= 30) {
     levelComplete();
   }
 }
@@ -335,7 +335,7 @@ function showIncrementedLives() {
 function timerSlut() {
   console.log("Timeren er slut!");
 
-  if (points > 25) {
+  if (points > 30) {
     levelComplete();
   } else {
     gameOver();
@@ -365,12 +365,12 @@ function stopGame() {
   document.querySelector("#lightning2_container").classList.remove("falling4");
 
   //fjern klik
-  document.querySelector("#football1_container").removeEventListener("click", clickBall);
-  document.querySelector("#football2_container").removeEventListener("click", clickBall);
-  document.querySelector("#football3_container").removeEventListener("click", clickBall);
-  document.querySelector("#golden1_container").removeEventListener("click", clickGolden);
-  document.querySelector("#bomb1_container").removeEventListener("click", clickBomb);
-  document.querySelector("#lightning2_container").removeEventListener("click", clickLightning);
+  document.querySelector("#football1_container").removeEventListener("mousedown", clickBall);
+  document.querySelector("#football2_container").removeEventListener("mousedown", clickBall);
+  document.querySelector("#football3_container").removeEventListener("mousedown", clickBall);
+  document.querySelector("#golden1_container").removeEventListener("mousedown", clickGolden);
+  document.querySelector("#bomb1_container").removeEventListener("mousedown", clickBomb);
+  document.querySelector("#lightning2_container").removeEventListener("mousedown", clickLightning);
 
   //Fjern baggrundsmusik & lyde
   // document.querySelector("#level_done").pause();
