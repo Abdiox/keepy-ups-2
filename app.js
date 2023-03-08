@@ -3,7 +3,7 @@
 window.addEventListener("load", start);
 let points = 0;
 let lives = 0;
-// let isGameRunning = false;
+let isGameRunning = false;
 function start() {
   console.log("Keepy ups!");
   document.querySelector("#btn_start").addEventListener("mousedown", startGame);
@@ -12,7 +12,7 @@ function start() {
 }
 
 function startGame() {
-  // isGameRunning = true;
+  isGameRunning = true;
   points = 0;
   lives = 3;
   resetLives();
@@ -41,6 +41,10 @@ function registrerKlik() {
   document.querySelector("#bomb2_container").addEventListener("mousedown", clickBomb);
 
   document.querySelector("#lightning2_container").addEventListener("mousedown", clickLightning);
+
+  document.querySelector("#football1_container").addEventListener("animationiteration", animationRepeat);
+  document.querySelector("#football2_container").addEventListener("animationiteration", animationRepeat);
+  document.querySelector("#football3_container").addEventListener("animationiteration", animationRepeat);
 }
 
 function startAnimationer() {
@@ -136,8 +140,6 @@ function animationRepeat() {
   document.querySelector("#football1_container").addEventListener("animationed", fotballsRestart);
   document.querySelector("#football2_container").addEventListener("animationed", fotballsRestart);
   document.querySelector("#football3_container").addEventListener("animationed", fotballsRestart);
-  // document.querySelector("#bomb1_container").addEventListener("animationed", bombRestart);
-  // document.querySelector("#bomb2_container").addEventListener("animationed", bombRestart);
 }
 
 function fotballsRestart() {
@@ -270,7 +272,7 @@ function lightningGone() {
 
 //Ting som skal give 1 point
 function incrementPoints() {
-  console.log("incrementPoints");
+  console.log("increment points");
   points = points + 1;
   displayPoints();
   if (points >= 30) {
@@ -282,7 +284,7 @@ function displayPoints() {
 }
 //ting som skal give 4 point
 function incrementMorePoints() {
-  console.log("IncrementMorePoints");
+  console.log("Få 3 point");
   points += 3;
   displayMorePoints();
 }
@@ -303,7 +305,7 @@ function displayPoints() {
 
 function decrementedLives() {
   lives--;
-  console.log("decrementLives");
+  console.log("Mist et liv");
   if (lives <= 0) {
     gameOver();
   }
@@ -311,7 +313,7 @@ function decrementedLives() {
 }
 //Ting som skal give liv
 function incrementedLives() {
-  console.log("incrementLives");
+  console.log("Få et liv");
   if (lives >= 3) {
     lives;
   } else lives++;
@@ -356,7 +358,7 @@ function levelComplete() {
 }
 
 function stopGame() {
-  // isGameRunning = false;
+  isGameRunning = false;
   //Fjern animationer
   document.querySelector("#ingame_sound").pause();
   document.querySelector("#football1_container").classList.remove("falling1");
@@ -371,8 +373,4 @@ function stopGame() {
   document.querySelector("#golden1_container").removeEventListener("mousedown", clickGolden);
   document.querySelector("#bomb1_container").removeEventListener("mousedown", clickBomb);
   document.querySelector("#lightning2_container").removeEventListener("mousedown", clickLightning);
-
-  //Fjern baggrundsmusik & lyde
-  // document.querySelector("#level_done").pause();
-  // document.querySelector("#level_done").currentTime = 0;
 }
