@@ -79,6 +79,7 @@ function resetPoints() {
   points = 0;
 
   displayPoints();
+  displayMorePoints();
 }
 function showGameScreen() {
   document.querySelector("#start").classList.add("hidden");
@@ -260,7 +261,7 @@ function lightningGone() {
 
 //Ting som skal give 1 point
 function incrementPoints() {
-  console.log("increment points");
+  console.log("Få 1 point");
   points = points + 1;
   displayPoints();
   if (points >= 30) {
